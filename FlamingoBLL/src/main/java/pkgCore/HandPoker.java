@@ -99,7 +99,20 @@ public class HandPoker extends Hand {
 	}
 
 	public boolean isStraight() {
-		boolean bisStraight = false;
+		boolean bisStraight = true;
+		
+		int a = 0;
+		if (super.getCards().get(0).geteRank() == eRank.ACE) {
+			a = 1;
+		}
+		
+		while (a < super.getCards().size() - 1) {
+			if(super.getCards().get(a).geteRank().getiRankNbr()-1 == super.getCards().get(a+1).geteRank().getiRankNbr()) {
+				bisStraight = false;
+			}
+			a++;
+		}
+		
 		// TODO : Implement this method
 		return bisStraight;
 	}
@@ -124,18 +137,36 @@ public class HandPoker extends Hand {
 
 	public boolean isTwoPair() {
 		boolean bisTwoPair = false;
+		
 		// TODO : Implement this method
 		return bisTwoPair;
 	}
 
 	public boolean isPair() {
 		boolean bisPair = false;
+		if (this.getCRC().size() == 2) {
+			if (this.getCRC().get(0).getiCnt() == Constants.TWO_OF_A_KIND) {
+				HandScorePoker HSP = (HandScorePoker) this.getHS();
+				HSP.seteHandStrength(eHandStrength.Pair);
+				int iGetCard = this.getCRC().get(0).getiCardPosition();
+				HSP.setHiCard(this.getCards().get(iGetCard));
+				HSP.setLoCard(null);
+				HSP.setKickers(FindTheKickers(this.getCRC()));
+				this.setHS(HSP);
+			}
+		}
 		// TODO : Implement this method
 		return bisPair;
 	}
 
 	public boolean isHighCard() {
 		boolean bisHighCard = false;
+		
+		if (isPair() != true && isTwoPair() != true && isThreeOfAKind() != true && isStraight() != true &&
+				isFlush() != true && isFullHouse() != true && isFourOfAKind() != true && isStraightFlush() != true &&
+				isRoyalFlush() != true) {
+			bisHighCard = true;
+		}
 		// TODO : Implement this method
 		return bisHighCard;
 	}
