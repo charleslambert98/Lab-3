@@ -53,6 +53,17 @@ public class HandPoker extends Hand {
 	// TODO : Implement this method
 	public boolean isFourOfAKind() {
 		boolean bisFourOfAKind = false;
+		if (this.getCRC().size() == 4) {
+			if (this.getCRC().get(0).getiCnt() == Constants.FOUR_OF_A_KIND) {
+				HandScorePoker HSP = (HandScorePoker) this.getHS();
+				HSP.seteHandStrength(eHandStrength.FourOfAKind);
+				int iGetCard = this.getCRC().get(0).getiCardPosition();
+				HSP.setHiCard(this.getCards().get(iGetCard));
+				HSP.setLoCard(null);
+				HSP.setKickers(FindTheKickers(this.getCRC()));
+				this.setHS(HSP);
+			}
+		}
 		return bisFourOfAKind;
 	}
 
