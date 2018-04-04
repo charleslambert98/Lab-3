@@ -306,6 +306,7 @@ public class HandPoker extends Hand {
 				CRC.add(new CardRankCount(eRank, iCnt, iPos));
 			}
 		}
+		
 		Collections.sort(CRC);
 	}
 
