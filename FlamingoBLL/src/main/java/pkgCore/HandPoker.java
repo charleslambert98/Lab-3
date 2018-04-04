@@ -90,6 +90,7 @@ public class HandPoker extends Hand {
 	public boolean isStraight() {
 		boolean bisStraight = false;
 		// TODO : Implement this method
+	
 		return bisStraight;
 	}
 
