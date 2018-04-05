@@ -28,15 +28,41 @@ public class HandPoker extends Hand {
 
 		Collections.sort(super.getCards());
 		Frequency();
-
+		
 		if (isRoyalFlush()) {
-
-		} else if (isStraightFlush()) {
-
+			return this.getHS();
+		} 
+		else if (isStraightFlush()) {
+			return this.getHS();
 		}
-
+		else if (isFourOfAKind()) {
+			return this.getHS();
+		}
+		else if (isFullHouse()) {
+			return this.getHS();
+		}
+		else if (isFlush()) {
+			return this.getHS();
+		}
+		else if (isStraight()) {
+			return this.getHS();
+		}
+		else if (isThreeOfAKind()) {
+			return this.getHS();
+		}
+		else if (isTwoPair()) {
+			return this.getHS();
+		}
+		else if (isPair()) {
+			return this.getHS();
+		}
+		else if (isHighCard()) {
+			return this.getHS();
+		}
 		return null;
 	}
+
+
 
 	public boolean isRoyalFlush() {
 		boolean bisStraight = true;
@@ -155,6 +181,19 @@ public class HandPoker extends Hand {
 	// TODO : Implement this method
 	public boolean isFullHouse() {
 		boolean bisFullHouse = false;
+		
+		if (this.CRC.size() == 2) {
+			if ((CRC.get(0).getiCnt() == 3) && (CRC.get(1).getiCnt() == 2)) {
+				bisFullHouse = true;
+				HandScorePoker HSP = (HandScorePoker) this.getHS();
+				HSP.seteHandStrength(eHandStrength.FullHouse);
+				HSP.setHiCard(this.getCards().get(CRC.get(0).getiCardPosition()));
+				HSP.setLoCard(this.getCards().get(CRC.get(1).getiCardPosition()));
+				ArrayList<Card> kickers = new ArrayList<Card>();
+				HSP.setKickers(kickers);
+				this.setHS(HSP);
+			}
+		}
 		return bisFullHouse;
 
 	}
