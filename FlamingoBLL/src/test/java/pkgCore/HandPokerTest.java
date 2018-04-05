@@ -20,6 +20,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.KING));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.ACE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isRoyalFlush(),true);
+		
 		System.out.println("");
 	}
 	
@@ -34,6 +37,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.HEARTS,eRank.FIVE));
 		hp.AddCard(new Card(eSuit.HEARTS,eRank.SIX));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isStraightFlush(),true);
+		
 		System.out.println("");
 	}
 	
@@ -48,6 +54,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.HEARTS,eRank.NINE));
 		hp.AddCard(new Card(eSuit.HEARTS,eRank.TEN));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isStraightFlush(),true);
+		
 		System.out.println("");
 	}
 	
@@ -62,6 +71,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.TWO));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isFourOfAKind(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -75,6 +87,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.TEN));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FIVE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isFourOfAKind(),true);
+		
 		System.out.println("");
 	}
 	
@@ -89,6 +104,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isThreeOfAKind(),true); 
+		
 		System.out.println("");
 	}
 	@Test
@@ -102,6 +120,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.SIX));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FOUR));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isThreeOfAKind(),true);
+		
 		System.out.println("");
 	}
 	
@@ -116,6 +137,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isTwoPair(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -129,6 +153,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.NINE));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FIVE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isTwoPair(),true);
+		
 		System.out.println("");
 	}
 	
@@ -143,6 +170,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.JACK));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FIVE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isPair(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -156,6 +186,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.TWO));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.KING));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isPair(),true);
+		
 		System.out.println("");
 	}
 	
@@ -170,6 +203,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.ACE));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.TEN));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isHighCard(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -183,6 +219,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.TEN));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FOUR));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isHighCard(),true);
+		
 		System.out.println("");
 	}
 	
@@ -197,6 +236,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.EIGHT));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.TEN));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isFlush(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -210,6 +252,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.JACK));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.KING));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isFlush(),true);
+		
 		System.out.println("");
 	}
 	
@@ -224,6 +269,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.SIX));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isStraight(),true);
+		
 		System.out.println("");
 	}
 	@Test
@@ -237,6 +285,9 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.EIGHT));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.NINE));
 		hp.ScoreHand();
+		
+		assertEquals(hp.isStraight(),true);
+		
 		System.out.println("");
 	}
 	
