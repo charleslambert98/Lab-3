@@ -2,8 +2,7 @@ package pkgCore;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-
+import org.junit.Test;import pkgEnum.eHandStrength;
 import pkgEnum.eRank;
 import pkgEnum.eSuit;
 
@@ -120,6 +119,7 @@ public class HandPokerTest {
 		hp.AddCard(new Card(eSuit.SPADES,eRank.SIX));
 		hp.AddCard(new Card(eSuit.CLUBS,eRank.FOUR));
 		hp.ScoreHand();
+		
 		
 		assertEquals(hp.isThreeOfAKind(),true);
 		
